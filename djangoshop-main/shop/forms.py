@@ -22,11 +22,15 @@ class CheckoutForm(forms.Form):
         'class': 'form-control',
     }))
     address = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'г.Тверь',
+        'placeholder': 'Г.Тверь',
         'class': 'form-control',
     }))
-    telegram = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Username',
+    date = forms.CharField(widget=forms.DateInput(attrs={
+        'placeholder': 'YYYY-MM-DD',
         'class': 'form-control',
-    }), required=False)
+    }))
+   # telegram = forms.CharField(widget=forms.TextInput(attrs={
+   #     'placeholder': 'Username',
+   #     'class': 'form-control',
+   # }), required=False)
     payment = forms.ChoiceField(choices=ORDER_TYPE)
